@@ -18,5 +18,4 @@ public class Ex9 {
         List<Double> ld = Arrays.asList(10.10, 20.20, 30.30);
         //swapFirst(li, ld);
     }
-
 }

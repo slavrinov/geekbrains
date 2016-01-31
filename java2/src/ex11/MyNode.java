@@ -10,14 +10,14 @@ public class MyNode extends Ex11_Node<Integer> {
 
     public static void main(String[] args) {
         //что произойдет при выполнении данного кода?
-      /*  MyNode mn = new MyNode(5);
+        MyNode mn = new MyNode(5);
         Ex11_Node n = mn;
         n.setData("Hello");
-        Integer x = mn.data;    */
+        //Integer x = mn.data;
     }
 
     public void setData(Integer data) {
-        System.out.println("MyNode.setData");
+        System.out.println(data);
         super.setData(data);
     }
 }

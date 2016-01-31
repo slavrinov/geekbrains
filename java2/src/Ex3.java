@@ -28,9 +28,11 @@ public class Ex3<E> {
 
     public static void main(String[] args) {
 
+/*
         Ex3 pq = new Ex3<>(new PriorityQueue<>(10));
 
         Ex3 set = new Ex3<>(new HashSet<>());
+*/
 
     }
 

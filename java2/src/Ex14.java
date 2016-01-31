@@ -13,12 +13,12 @@ public class Ex14 {
     }
 
     public static void two() {
-        List<Integer> li = new ArrayList<>();
+        List<Integer> li = new ArrayList<Integer>();
         //   List<Number> ln = (List<Number>) li;  // compile-time error
 
         //However, in some cases the compiler knows that a type parameter is always valid and allows the cast. For example:
 
-        List<String> l1 = new ArrayList<>();
+        List<String> l1 = new ArrayList<String>();
         ArrayList<String> l2 = (ArrayList<String>) l1;  // OK
 
     }

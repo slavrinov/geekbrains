@@ -20,5 +20,4 @@ public class Ex7 {
             System.out.print(elem + " ");
         System.out.println();
     }
-
 }
