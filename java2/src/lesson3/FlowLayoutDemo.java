@@ -45,7 +45,7 @@ import java.awt.event.ActionListener;
 public class FlowLayoutDemo extends JFrame{
     JRadioButton RtoLbutton;
     JRadioButton LtoRbutton;
-    FlowLayout experimentLayout = new FlowLayout();
+    FlowLayout experimentLayout = new FlowLayout(FlowLayout.LEADING, 30,30);
     final String RtoL = "Right to left";
     final String LtoR = "Left to right";
     JButton applyButton = new JButton("Apply component orientation");
@@ -57,7 +57,7 @@ public class FlowLayoutDemo extends JFrame{
     public void addComponentsToPane(final Container pane) {
         final JPanel compsToExperiment = new JPanel();
         compsToExperiment.setLayout(experimentLayout);
-        experimentLayout.setAlignment(FlowLayout.TRAILING);
+        //experimentLayout.setAlignment(FlowLayout.TRAILING);
         JPanel controls = new JPanel();
         controls.setLayout(new FlowLayout());
         
@@ -93,6 +93,8 @@ public class FlowLayoutDemo extends JFrame{
                 if (command.equals("Left to right")) {
                     compsToExperiment.setComponentOrientation(
                             ComponentOrientation.LEFT_TO_RIGHT);
+                            /// обработка события
+
                 } else {
                     compsToExperiment.setComponentOrientation(
                             ComponentOrientation.RIGHT_TO_LEFT);
@@ -126,7 +128,7 @@ public class FlowLayoutDemo extends JFrame{
         /* Use an appropriate Look and Feel */
         try {
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (UnsupportedLookAndFeelException ex) {
             ex.printStackTrace();
         } catch (IllegalAccessException ex) {
@@ -136,6 +138,7 @@ public class FlowLayoutDemo extends JFrame{
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         }
+
         /* Turn off metal's use of bold fonts */
         UIManager.put("swing.boldMetal", Boolean.FALSE);
         //Schedule a job for the event dispatchi thread:

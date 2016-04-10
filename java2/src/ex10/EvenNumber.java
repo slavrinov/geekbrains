@@ -9,6 +9,9 @@ package ex10;
     * */
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Сергей on 23.01.2016.
  */
@@ -23,8 +26,15 @@ public class EvenNumber extends NaturalNumber {
     public static void main(String[] args) {
 
         //Скомпилируется ли код?
-        /*List<EvenNumber> le = new ArrayList<>();
-        List<? extends NaturalNumber> ln = le;
-        ln.add(new EvenNumber(35));*/
+        //List<Integer> le = new ArrayList<>();
+        List<? super Number> ln = new ArrayList<>();
+        ln.add(new Integer(1));
+        ln.add(new Double(1.4));
+        ln.add(new Float(1.4));
+        //ln.add(new Object());
+
+        //todo explain
+        List<? extends Integer> ln2 = new ArrayList<>();
+        //ln2.add(new Object());
     }
 }

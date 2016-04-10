@@ -1,10 +1,15 @@
 package lesson6;
 
+import java.util.concurrent.TimeUnit;
+
 public class StopThreads {
+
+    Object monitor;
 
     static class Task extends Thread {
         @Override
         public void run() {
+
             while (!isInterrupted()) {
                 System.out.println("in thread");
 
@@ -43,16 +48,18 @@ public class StopThreads {
         // Другой способ поспать
         //TimeUnit.SECONDS.sleep(1);
 
-        t.interrupt();
+
 
         // запускаем другой поток
-        /*Thread t2 = new Task2();
+        Thread t2 = new Task2();
         t2.start();
 
-        TimeUnit.SECONDS.sleep(1);
-*/
+        TimeUnit.SECONDS.sleep(4);
+        t.interrupt();
 
-        //t2.interrupt();
+
+
+        t2.interrupt();
     }
 
 

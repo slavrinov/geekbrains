@@ -9,13 +9,13 @@ package lesson6;
         @Override
         public void run()
         {
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < 10; i++)
             {
                 try{
                     sleep(1000);		//Приостанавливает поток на 1 секунду
                 }catch(InterruptedException e){}
-
-                System.out.println("яйцо!");
+                if (i%2==0) {Thread.yield();}
+                    System.out.println("яйцо!");
             }
             //Слово «яйцо» сказано 5 раз
         }
@@ -30,11 +30,11 @@ package lesson6;
             mAnotherOpinion = new EggVoice();	//Создание потока
             System.out.println("Спор начат...");
             mAnotherOpinion.start(); 			//Запуск потока
-
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < 10; i++)
             {
                 try{
                     Thread.sleep(1000);		//Приостанавливает поток на 1 секунду
+
                 }catch(InterruptedException e){}
 
                 System.out.println("курица!");

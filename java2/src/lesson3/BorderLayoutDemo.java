@@ -97,7 +97,7 @@ public class BorderLayoutDemo {
         /* Use an appropriate Look and Feel */
         try {
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+            UIManager.setLookAndFeel("javax.swing.plaf.multi.MultiLookAndFeel");
         } catch (UnsupportedLookAndFeelException ex) {
             ex.printStackTrace();
         } catch (IllegalAccessException ex) {
@@ -107,6 +107,7 @@ public class BorderLayoutDemo {
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         }
+
         /* Turn off metal's use bold fonts */
         UIManager.put("swing.boldMetal", Boolean.FALSE);
         

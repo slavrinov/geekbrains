@@ -3,15 +3,22 @@ package lesson7;
 /**
  * Created by Сергей on 06.03.2016.
  */
+import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.lang.reflect.Member;
+import java.lang.reflect.Method;
+
 import static java.lang.System.out;
+
 
 enum ClassMember { CONSTRUCTOR, FIELD, METHOD, CLASS, ALL }
 
 public class ClassSpy {
+    //java.util.HashMap
+    //ClassMember FIELD METHOD
+    //java.nio.channels.ReadableByteChannel
+    //java.util.Collections
     public static void main(String... args) {
         try {
             Class<?> c = Class.forName(args[0]);
@@ -21,32 +28,32 @@ public class ClassSpy {
             out.format("Package:%n  %s%n%n",
                     (p != null ? p.getName() : "-- No Package --"));
 
-            for (int i = 1; i < args.length; i++) {
-                switch (ClassMember.valueOf(args[i])) {
-                    case CONSTRUCTOR:
-                        printMembers(c.getConstructors(), "Constructor");
-                        break;
-                    case FIELD:
-                        printMembers(c.getFields(), "Fields");
-                        break;
-                    case METHOD:
-                        printMembers(c.getMethods(), "Methods");
-                        break;
-                    case CLASS:
-                        printClasses(c);
-                        break;
-                    case ALL:
-                        printMembers(c.getConstructors(), "Constuctors");
-                        printMembers(c.getFields(), "Fields");
-                        printMembers(c.getMethods(), "Methods");
-                        printClasses(c);
-                        break;
-                    default:
-                        assert false;
-                }
+        for (int i = 1; i < args.length; i++) {
+            switch (ClassMember.valueOf(args[i])) {
+                case CONSTRUCTOR:
+                    printMembers(c.getConstructors(), "Constructor");
+                    break;
+                case FIELD:
+                    printMembers(c.getFields(), "Fields");
+                    break;
+                case METHOD:
+                    printMembers(c.getMethods(), "Methods");
+                    break;
+                case CLASS:
+                    printClasses(c);
+                    break;
+                case ALL:
+                    printMembers(c.getConstructors(), "Constuctors");
+                    printMembers(c.getFields(), "Fields");
+                    printMembers(c.getMethods(), "Methods");
+                    printClasses(c);
+                    break;
+                default:
+                    assert false;
             }
+        }
 
-            // production code should handle these exceptions more gracefully
+        // production code should handle these exceptions more gracefully
         } catch (ClassNotFoundException x) {
             x.printStackTrace();
         }
@@ -56,11 +63,11 @@ public class ClassSpy {
         out.format("%s:%n", s);
         for (Member mbr : mbrs) {
             if (mbr instanceof Field)
-                out.format("  %s%n", ((Field)mbr).toGenericString());
+                out.format("  %s%n", ((Field) mbr).toGenericString());
             else if (mbr instanceof Constructor)
-                out.format("  %s%n", ((Constructor)mbr).toGenericString());
+                out.format("  %s%n", ((Constructor) mbr).toGenericString());
             else if (mbr instanceof Method)
-                out.format("  %s%n", ((Method)mbr).toGenericString());
+                out.format("  %s%n", ((Method) mbr).toGenericString());
         }
         if (mbrs.length == 0)
             out.format("  -- No %s --%n", s);
@@ -75,5 +82,31 @@ public class ClassSpy {
         if (clss.length == 0)
             out.format("  -- No member interfaces, classes, or enums --%n");
         out.format("%n");
+    }
+
+
+    class Test implements Serializable, Cloneable {
+        private final int field =10;
+
+        public Test() {
+
+        }
+
+        public Test(Object field) { }
+
+        /*@Deprecated
+        protected static void method(String[] params) { }
+*/
+
+        public void foo() {
+            System.out.println("FOO");
+        }
+
+        @Override
+        public String toString() {
+            return "Test{" +
+                    "field=" + field +
+                    '}';
+        }
     }
 }

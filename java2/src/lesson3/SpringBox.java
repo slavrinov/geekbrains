@@ -66,7 +66,7 @@ public class SpringBox {
         //as necessary, with 6 pixels of padding all around.
         SpringUtilities.makeCompactGrid(contentPane, 1,
                                         contentPane.getComponentCount(),
-                                        6, 6, 6, 6);
+                                        20, 20, 20, 20);
 
         //Display the window.
         frame.pack();

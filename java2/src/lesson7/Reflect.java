@@ -11,7 +11,16 @@ import java.lang.reflect.Modifier;
  *
  */
 class Test implements Serializable, Cloneable {
-    private int field;
+    public final int field =10;
+    protected final String strprv ="PRIVATE STRING";
+    public final String str ="PROTECTED STRING";
+    public final String str2 ="PUBLIC STRING";
+
+
+    private Test(Object obj, Object obj2) {
+
+    }
+
 
     public Test() {
 

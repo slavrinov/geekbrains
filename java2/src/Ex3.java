@@ -15,28 +15,28 @@ public class Ex3<E> {
         if (c instanceof SortedSet<?>) {
             SortedSet<? extends E> ss = (SortedSet<? extends E>) c;
             this.comparator = (Comparator<? super E>) ss.comparator();
-            initElementsFromCollection(ss);
+            //initElementsFromCollection(ss);
         } else if (c instanceof PriorityQueue<?>) {
             PriorityQueue<? extends E> pq = (PriorityQueue<? extends E>) c;
             this.comparator = (Comparator<? super E>) pq.comparator();
-            //initFromPriorityQueue(pq);
+            initFromPriorityQueue(pq);
         } else {
             this.comparator = null;
-            //initFromCollection(c);
+            initFromCollection(c);
         }
     }
 
     public static void main(String[] args) {
 
-/*
-        Ex3 pq = new Ex3<>(new PriorityQueue<>(10));
+
+        Ex3<Object> pq = new Ex3<>(new PriorityQueue<>(10));
 
         Ex3 set = new Ex3<>(new HashSet<>());
-*/
+
 
     }
 
-    private void initElementsFromCollection(Collection<? extends E> c) {
+    private void initElementsFromCollection(Collection<Number> c) {
         Object[] a = c.toArray();
         // If c.toArray incorrectly doesn't return Object[], copy it.
         if (a.getClass() != Object[].class)
@@ -50,6 +50,8 @@ public class Ex3<E> {
         this.size = a.length;
     }
 
+
+
     private void initFromPriorityQueue(PriorityQueue<? extends E> c) {
         if (c.getClass() == PriorityQueue.class) {
             this.queue = c.toArray();
@@ -60,7 +62,7 @@ public class Ex3<E> {
     }
 
     private void initFromCollection(Collection<? extends E> c) {
-        initElementsFromCollection(c);
+        //initElementsFromCollection(c);
         //heapify();
     }
 }

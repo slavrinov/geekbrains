@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,5 +20,32 @@ public class Ex7 {
         for (Object elem : list)
             System.out.print(elem + " ");
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        List<Object> list = new ArrayList<Object>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        List<Number> list2 = new ArrayList<>();
+        list2.add(1);
+        list2.add(2);
+        list2.add(3);
+        printList2(list2);
+
+        List<Double> list3 = new ArrayList<>();
+        list3.add(1.1);
+        list3.add(2.2);
+        list3.add(3.2);
+        printList2(list3);
+
+        List<String> list4 = new ArrayList<>();
+        list4.add("eferf");
+        list4.add("rfrf");
+        list4.add("ferferferf");
+        printList2(list4);
+
+
+
     }
 }

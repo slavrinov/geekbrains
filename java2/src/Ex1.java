@@ -8,7 +8,7 @@ public class Ex1<T> {
     PriorityQueue<Object> objects = new PriorityQueue<Object>();
 
     public static void main(String[] args) {
-        Ex1<Integer> intBox = new Ex1<Integer>();
+        Ex1<Integer> intBox = new Ex1<>();
 
         // If the actual type argument is omitted, you create a raw type of Box<T>:
 

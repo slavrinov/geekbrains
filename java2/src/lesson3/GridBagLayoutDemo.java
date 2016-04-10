@@ -35,9 +35,8 @@ package lesson3;
  * GridBagLayoutDemo.java requires no other files.
  */
 
+import javax.swing.*;
 import java.awt.*;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 
 public class GridBagLayoutDemo {
     final static boolean shouldFill = true;
@@ -100,6 +99,8 @@ public class GridBagLayoutDemo {
 	c.gridy = 2;       //third row
 	pane.add(button, c);
     }
+
+
 
     /**
      * Create the GUI and show it.  For thread safety,

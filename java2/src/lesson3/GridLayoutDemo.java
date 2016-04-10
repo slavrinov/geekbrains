@@ -29,16 +29,17 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */ 
 
-package lesson3;
+package src.lesson1.generics;
 
 /*
  * GridLayoutDemo.java
  *
  */
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GridLayoutDemo extends JFrame {
     static final String gapList[] = {"0", "10", "15", "20"};
@@ -77,6 +78,9 @@ public class GridLayoutDemo extends JFrame {
         compsToExperiment.add(new JButton("Button 3"));
         compsToExperiment.add(new JButton("Long-Named Button 4"));
         compsToExperiment.add(new JButton("5"));
+        compsToExperiment.add(new JButton("6"));
+        compsToExperiment.add(new JButton("7"));
+        compsToExperiment.add(new JButton("8"));
         
         //Add controls to set up horizontal and vertical gaps
         controls.add(new Label("Horizontal gap:"));

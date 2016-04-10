@@ -35,9 +35,10 @@ package lesson3;
  * BoxLayoutDemo2.java requires one other file:  BLDComponent.java
  */
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class BoxLayoutDemo2 implements ItemListener {
     protected static int NUM_COMPONENTS = 3;
@@ -131,5 +132,10 @@ public class BoxLayoutDemo2 implements ItemListener {
                 createAndShowGUI();
             }
         });
+        Box box = Box.createVerticalBox();
+        box.add(new JButton());
+        Box box2  = Box.createHorizontalBox();
+        box2.add(new JButton());
+
     }
 }

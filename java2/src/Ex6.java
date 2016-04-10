@@ -1,7 +1,7 @@
 /**
  * Created by Сергей on 22.01.2016.
  */
-public class Ex6 {
+public class Ex6<T extends Comparable<T>> {
 
 
     public static <T extends Comparable<T>> int countGreaterThan(T[] anArray, T elem) {
@@ -15,4 +15,12 @@ public class Ex6 {
     interface Comparable<T> {
         public int compareTo(T o);
     }
+
+
+
+    public static void main(String[] args) {
+        Integer[] arr = new Integer[]{};
+        Ex6<Integer> i = new Ex6<Integer>();
+    }
+
 }

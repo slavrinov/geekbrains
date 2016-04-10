@@ -6,7 +6,7 @@ import java.util.List;
 public class Ex13 {
 
     public static <E> void append(List<E> list) {
-        //E elem = new E();  // compile-time error
+        E elem = new E();  // compile-time error
         //list.add(elem);
     }
 }

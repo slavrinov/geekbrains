@@ -13,7 +13,7 @@ public class MyNode extends Ex11_Node<Integer> {
         MyNode mn = new MyNode(5);
         Ex11_Node n = mn;
         n.setData("Hello");
-        //Integer x = mn.data;
+        Integer x = mn.data;
     }
 
     public void setData(Integer data) {

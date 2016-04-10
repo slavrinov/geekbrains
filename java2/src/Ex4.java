@@ -7,10 +7,11 @@ public class Ex4 {
 
     public static void main(String[] args) {
         //скомплируется ли код?
-        //boxTest(11);
-        //boxTest(44f);
+        boxTest(new Box<Number>());
+        //boxTest(new Box<Float>());
+
     }
 
-    class Box<T> {
+    static class Box<T> {
     }
 }

@@ -17,7 +17,7 @@ public class Ex2<K, V> {
     }
 
     public static void main(String[] args) {
-        /*Ex2<Integer, String> p1 = new Ex2<>(1, "apple");
+        Ex2<Integer, String> p1 = new Ex2<>(1, "apple");
         Ex2<Integer, String> p2 = new Ex2<>(2, "pear");
         boolean same = Ex2.<Integer, String>compare(p1, p2);
         System.out.println("same1 = " + same);
@@ -28,9 +28,10 @@ public class Ex2<K, V> {
         System.out.println("same2 = " + same2);
 
         Ex2<Integer, String> p5 = new Ex2<>(1, "apple");
-        Ex2<Integer, String> p6 = new Ex2<>(1, "apple");*/
-        /*System.out.println("same3 = " + same3);
-        boolean same3 = Ex2.compare(p5, p6);*/
+        Ex2<Integer, String> p6 = new Ex2<>(1, "apple");
+
+        boolean same3 = Ex2.compare(p5, p6);
+        System.out.println("same3 = " + same3);
     }
 
     public K getKey() {

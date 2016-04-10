@@ -35,9 +35,12 @@ package lesson3;
  * CardLayoutDemo.java
  *
  */
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class CardLayoutDemo implements ItemListener {
     JPanel cards; //a panel that uses CardLayout
@@ -58,7 +61,16 @@ public class CardLayoutDemo implements ItemListener {
         card1.add(new JButton("Button 1"));
         card1.add(new JButton("Button 2"));
         card1.add(new JButton("Button 3"));
-        
+        JButton button = new JButton("Button 4");
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               String command = e.getActionCommand();
+
+            }
+        });
+
+
         JPanel card2 = new JPanel();
         card2.add(new JTextField("TextField", 20));
         
